@@ -1,6 +1,6 @@
+import 'package:exchange_rate/c_change.dart';
 import 'package:flutter/material.dart';
-import 'package:exchange_rate/cdata.dart';
-import 'package:exchange_rate/midsplit.dart';
+import 'package:provider/provider.dart';
 
 class ICard extends StatelessWidget {
   final String cName;
@@ -14,10 +14,8 @@ class ICard extends StatelessWidget {
       height: 100,
       child: GestureDetector(
         onTap: () {
-          set2 = int.parse((cCountry[cName]).toString());
-          print(set2);
+          Provider.of<Cchange>(context, listen: false).changeCoRi(cName);
           Navigator.of(context).pop();
-          recall();
         },
         child: Card(
           margin: EdgeInsets.only(top: 10, right: 10),
@@ -35,6 +33,7 @@ class ICard extends StatelessWidget {
                 width: 250,
                 child: Text(
                   cName,
+                  textAlign: TextAlign.right,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),

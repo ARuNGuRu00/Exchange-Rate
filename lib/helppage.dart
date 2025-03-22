@@ -1,9 +1,7 @@
-import 'package:exchange_rate/helppage.dart';
-import 'package:exchange_rate/splits.dart';
 import 'package:flutter/material.dart';
 
-class ExchangeRateMain extends StatelessWidget {
-  const ExchangeRateMain({super.key});
+class HelpPage extends StatelessWidget {
+  const HelpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,21 +13,6 @@ class ExchangeRateMain extends StatelessWidget {
         ),
         elevation: 2,
         backgroundColor: const Color.fromRGBO(235, 104, 120, 1),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return HelpPage();
-                  },
-                ),
-              );
-            },
-            icon: const Icon(Icons.help_outline_rounded, size: 30),
-          ),
-          const SizedBox(width: 10),
-        ],
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -42,7 +25,7 @@ class ExchangeRateMain extends StatelessWidget {
             ],
           ),
         ),
-        child: Splits(),
+        child: Center(child: Text('help page')),
       ),
     );
   }

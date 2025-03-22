@@ -87,6 +87,3 @@ const cCountry = {
   'USD-US Dollar': '40',
   'AED-Utd. Arab Emir. Dirham': '41',
 };
-
-var set1 = 3;
-var set2 = 1;

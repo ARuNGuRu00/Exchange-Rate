@@ -1,3 +1,4 @@
+import 'package:exchange_rate/helppage.dart';
 import 'package:flutter/material.dart';
 import 'package:exchange_rate/rhs_win.dart';
 import 'package:exchange_rate/cdata.dart';
@@ -17,7 +18,15 @@ class Right extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(235, 104, 120, 1),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return HelpPage();
+                  },
+                ),
+              );
+            },
             icon: const Icon(Icons.help_outline_rounded, size: 30),
           ),
           const SizedBox(width: 10),

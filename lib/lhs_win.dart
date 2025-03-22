@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:exchange_rate/cdata.dart';
+import 'package:exchange_rate/c_change.dart';
+import 'package:provider/provider.dart';
 
 class ICard extends StatelessWidget {
   final String cName;
   final String imgPath;
 
   const ICard({super.key, required this.cName, required this.imgPath});
-  void onPress() {
-    print(cCountry[cName]);
-  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
       child: GestureDetector(
-        onTap: onPress,
+        onTap: () {
+          Provider.of<Cchange>(context, listen: false).changeCoLe(cName);
+          Navigator.of(context).pop();
+        },
         child: Card(
           margin: EdgeInsets.only(top: 10, left: 10),
           shape: RoundedRectangleBorder(
@@ -39,6 +40,8 @@ class ICard extends StatelessWidget {
                 width: 250,
                 child: Text(
                   cName,
+
+                  textAlign: TextAlign.left,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
