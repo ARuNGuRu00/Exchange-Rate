@@ -10,12 +10,26 @@ class Left extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Exchange Rate',
-          style: TextStyle(fontWeight: FontWeight.w600),
+        elevation: 4,
+        title: Row(
+          children: [
+            Image.asset('lib/assert/eimgs/g16.png', width: 35),
+            const SizedBox(width: 10),
+            const Text(
+              'Exchange Rate',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Orbitron',
+                fontSize: 18,
+              ),
+            ),
+          ],
         ),
-        elevation: 2,
-        backgroundColor: const Color.fromRGBO(235, 104, 120, 1),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        centerTitle: true,
 
         actions: [
           IconButton(
@@ -33,27 +47,14 @@ class Left extends StatelessWidget {
           const SizedBox(width: 10),
         ],
       ),
-      body: Container(
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(237, 152, 162, 1),
-              Color.fromRGBO(241, 223, 223, 1),
-            ],
-          ),
-        ),
-        child: ListView.builder(
-          itemCount: 42,
-          itemBuilder: (context, index) {
-            return ICard(
-              cName: cCode[index.toString()].toString(),
-              imgPath: cCode[index.toString()].toString(),
-            );
-          },
-        ),
+      body: ListView.builder(
+        itemCount: 42,
+        itemBuilder: (context, index) {
+          return ICard(
+            cName: cCode[index.toString()].toString(),
+            imgPath: cCode[index.toString()].toString(),
+          );
+        },
       ),
     );
   }

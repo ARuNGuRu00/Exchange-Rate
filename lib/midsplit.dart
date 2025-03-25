@@ -21,8 +21,6 @@ class _MidsplitState extends State<Midsplit> {
   var ono = 1;
   var ont = 0;
 
-  var set2 = 1;
-
   void onChange2(String value, set1, set2) {
     (value == '')
         ? primary.text = ''
@@ -36,6 +34,8 @@ class _MidsplitState extends State<Midsplit> {
   }
 
   Widget butfun(text) {
+    primary.text = '';
+    secondary.text = '';
     return IconButton(
       iconSize: 300,
       onPressed: () {
@@ -78,7 +78,7 @@ class _MidsplitState extends State<Midsplit> {
             Padding(
               padding: EdgeInsets.only(right: 15),
               child: Card(
-                color: Color.fromRGBO(213, 133, 133, 1),
+                elevation: .5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.horizontal(
                     right: Radius.circular(100),
@@ -131,6 +131,8 @@ class _MidsplitState extends State<Midsplit> {
                     );
                   },
                   child: Card(
+                    elevation: 1,
+                    color: Color.fromRGBO(240, 230, 246, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(35),
@@ -174,9 +176,12 @@ class _MidsplitState extends State<Midsplit> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 7),
-                  child: Image.asset('lib/assert/eimgs/path3.png', width: 25),
+                GestureDetector(
+                  onTap: Provider.of<Cchange>(context).changeCoun,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 7),
+                    child: Image.asset('lib/assert/eimgs/path3.png', width: 25),
+                  ),
                 ),
                 //Icon(Icons.compare_arrows, size: 30),
                 GestureDetector(
@@ -190,6 +195,8 @@ class _MidsplitState extends State<Midsplit> {
                     );
                   },
                   child: Card(
+                    elevation: 1,
+                    color: Color.fromRGBO(240, 230, 246, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.horizontal(
                         right: Radius.circular(35),
@@ -239,7 +246,7 @@ class _MidsplitState extends State<Midsplit> {
             Padding(
               padding: EdgeInsets.only(left: 15),
               child: Card(
-                color: Color.fromRGBO(213, 133, 133, 1),
+                elevation: .5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.horizontal(
                     left: Radius.circular(300),
@@ -274,8 +281,8 @@ class _MidsplitState extends State<Midsplit> {
           ],
         ),
         Card(
-          margin: EdgeInsets.symmetric(horizontal: 30),
-          color: Color.fromRGBO(239, 138, 138, 1),
+          margin: EdgeInsets.symmetric(horizontal: 22),
+          elevation: 4,
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -289,7 +296,7 @@ class _MidsplitState extends State<Midsplit> {
                         primary.text = '';
                         secondary.text = '';
                       },
-                      icon: Icon(Icons.fast_rewind_rounded),
+                      icon: Icon(Icons.fast_rewind_sharp),
                     ),
 
                     IconButton(

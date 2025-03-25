@@ -16,4 +16,11 @@ class Cchange extends ChangeNotifier {
     set2 = int.parse(cCountry[nInput].toString());
     notifyListeners();
   }
+
+  void changeCoun() {
+    var temp = set1;
+    set1 = set2;
+    set2 = temp;
+    notifyListeners();
+  }
 }

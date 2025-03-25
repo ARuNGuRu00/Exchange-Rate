@@ -16,7 +16,7 @@ class ExchangeRate extends StatelessWidget {
       create: (context) => Cchange(),
       child: MaterialApp(
         title: 'Exchange Rate',
-        theme: ThemeData.light(useMaterial3: true),
+        theme: ThemeData(fontFamily: 'Ubuntu', useMaterial3: true),
         debugShowCheckedModeBanner: false,
         home: const ExchangeRateMain(),
       ),
