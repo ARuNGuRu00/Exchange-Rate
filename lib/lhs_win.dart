@@ -32,7 +32,7 @@ class ICard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 10, right: 30),
+                padding: EdgeInsets.only(left: 10, right: 10),
                 child: CircleAvatar(
                   radius: 30,
                   backgroundImage: AssetImage('lib/assert/flags/$imgPath.png'),
